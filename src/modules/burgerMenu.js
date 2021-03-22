@@ -16,12 +16,15 @@ const burgerMenu = function() {
   });
   window.addEventListener('scroll', event => {
     if (pageYOffset >= 238) {
-      console.log(burgerMenuBtn.parentElement);
       burgerMenuBtn.parentElement.parentElement.style.cssText = 'position: fixed; top: 0; left: 0; z-index: 999999;';
     } else {
       burgerMenuBtn.parentElement.parentElement.style.cssText = '';
     }
   })
+  if (window.screen.availWidth > 768) {
+    console.log(2);
+  }
+
 }
 
 export default burgerMenu;

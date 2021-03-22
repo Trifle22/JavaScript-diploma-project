@@ -2401,6 +2401,12 @@ p.personal-data input[type=checkbox]:checked+label:before {
   }
 }
 
+@media (min-width: 768px) {
+  .popup-menu {
+    display: none !important;
+  }
+}
+
 @media only screen and (max-width:767px) {
 
   html,
