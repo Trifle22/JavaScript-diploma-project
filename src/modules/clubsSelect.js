@@ -13,6 +13,8 @@ const clubsSelect = function() {
     } else if (!target.closest('.club-list-active') && 
                 dropdownElement.classList.contains('club-list-active')) {
       handlerDropdown();
+    } else if (target.classList.contains('club-list-active')) {
+      console.log(1);
     }
   })
 }

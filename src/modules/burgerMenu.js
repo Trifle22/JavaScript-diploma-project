@@ -21,10 +21,6 @@ const burgerMenu = function() {
       burgerMenuBtn.parentElement.parentElement.style.cssText = '';
     }
   })
-  if (window.screen.availWidth > 768) {
-    console.log(2);
-  }
-
 }
 
 export default burgerMenu;
