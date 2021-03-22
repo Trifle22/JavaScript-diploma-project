@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar clubsSelect = function clubsSelect() {\n  var clubsSelectElement = document.querySelector('.clubs-list');\n  var dropdownElement = document.querySelector('.dropdown-header');\n\n  var handlerDropdown = function handlerDropdown() {\n    dropdownElement.classList.toggle('club-list-active');\n  };\n\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.clubs-list')) {\n      handlerDropdown();\n    } else if (!target.closest('.club-list-active') && dropdownElement.classList.contains('club-list-active')) {\n      handlerDropdown();\n    } else if (target.classList.contains('club-list-active')) {\n      console.log(1);\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (clubsSelect);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/clubsSelect.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar clubsSelect = function clubsSelect() {\n  var clubsSelectElement = document.querySelector('.clubs-list');\n  var dropdownElement = document.querySelector('.dropdown-header');\n\n  var handlerDropdown = function handlerDropdown() {\n    dropdownElement.classList.toggle('club-list-active');\n  };\n\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.clubs-list')) {\n      handlerDropdown();\n    } else if (target.closest('.dropdown-header') && dropdownElement.classList.contains('club-list-active')) {\n      console.log(3);\n    } else if (!target.closest('.club-list-active') && dropdownElement.classList.contains('club-list-active')) {\n      handlerDropdown();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (clubsSelect);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/clubsSelect.js?");
 
 /***/ }),
 
@@ -462,7 +462,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("bc349c7fa89e76098291")
+/******/ 		__webpack_require__.h = () => ("b1988e101efba9363130")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

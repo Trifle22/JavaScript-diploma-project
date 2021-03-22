@@ -10,12 +10,13 @@ const clubsSelect = function() {
     const target = event.target;
     if (target.closest('.clubs-list')) {
       handlerDropdown();
+    } else if (target.closest('.dropdown-header') && 
+    dropdownElement.classList.contains('club-list-active')) {
+      console.log(3);
     } else if (!target.closest('.club-list-active') && 
                 dropdownElement.classList.contains('club-list-active')) {
       handlerDropdown();
-    } else if (target.classList.contains('club-list-active')) {
-      console.log(1);
-    }
+    } 
   })
 }
 
