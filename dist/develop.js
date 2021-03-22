@@ -49,7 +49,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar burgerMenu = function burgerMenu() {\n  var burgerMenuBtn = document.querySelector('.menu-button');\n  var menu = document.querySelector('.popup-menu');\n  burgerMenuBtn.addEventListener('click', function (event) {\n    var target = event.target;\n    menu.style.cssText = \"display: flex; animation: fade 0.4s ease-in-out;\";\n    menu.addEventListener('click', function (event) {\n      var target = event.target;\n\n      if (target.closest('.close-menu-btn')) {\n        this.style.display = 'none';\n      } else if (target.matches('a')) {\n        this.style.display = 'none';\n      }\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (burgerMenu);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/burgerMenu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar burgerMenu = function burgerMenu() {\n  var burgerMenuBtn = document.querySelector('.menu-button');\n  var menu = document.querySelector('.popup-menu');\n  burgerMenuBtn.addEventListener('click', function (event) {\n    var target = event.target;\n    menu.style.cssText = \"display: flex; animation: fade 0.4s ease-in-out;\";\n    menu.addEventListener('click', function (event) {\n      var target = event.target;\n\n      if (target.closest('.close-menu-btn')) {\n        this.style.display = 'none';\n      } else if (target.matches('a')) {\n        this.style.display = 'none';\n      }\n    });\n  });\n  window.addEventListener('scroll', function (event) {\n    if (pageYOffset >= 238) {\n      console.log(burgerMenuBtn.parentElement);\n      burgerMenuBtn.parentElement.parentElement.style.cssText = 'position: fixed; top: 0; left: 0; z-index: 999999;';\n    } else {\n      burgerMenuBtn.parentElement.parentElement.style.cssText = '';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (burgerMenu);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/burgerMenu.js?");
 
 /***/ }),
 
@@ -462,7 +462,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("119d357a89d728bd2f21")
+/******/ 		__webpack_require__.h = () => ("9160eb8f22973903bc60")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
