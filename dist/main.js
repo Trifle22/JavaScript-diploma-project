@@ -1,0 +1,1 @@
+(()=>{"use strict";!function(){const o=document.querySelector(".menu-button");console.log(o),console.log(1),console.log(2)}()})();
