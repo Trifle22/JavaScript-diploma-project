@@ -2288,6 +2288,9 @@ p.personal-data input[type=checkbox]:checked+label:before {
   font-weight: 500;
   margin-top: 30px
 }
+#gift.active {
+  display: block;
+}
 
 @media only screen and (max-width:1199px) {
   .services-slider .slider-arrow.prev {

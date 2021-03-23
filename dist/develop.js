@@ -38,7 +38,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burgerMenu.js */ \"./src/modules/burgerMenu.js\");\n/* harmony import */ var _modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/clubsSelect.js */ \"./src/modules/clubsSelect.js\");\n\n\n\n\n(0,_modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://diplomaproject/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burgerMenu.js */ \"./src/modules/burgerMenu.js\");\n/* harmony import */ var _modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/clubsSelect.js */ \"./src/modules/clubsSelect.js\");\n/* harmony import */ var _modules_present_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/present.js */ \"./src/modules/present.js\");\n\n\n\n\n\n(0,_modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_present_js__WEBPACK_IMPORTED_MODULE_2__.default)();\n\n//# sourceURL=webpack://diplomaproject/./src/index.js?");
 
 /***/ }),
 
@@ -61,6 +61,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar clubsSelect = function clubsSelect() {\n  var clubsSelectElement = document.querySelector('.clubs-list');\n  var dropdownElement = document.querySelector('.dropdown-header');\n\n  var handlerDropdown = function handlerDropdown() {\n    dropdownElement.classList.toggle('club-list-active');\n  };\n\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.clubs-list')) {\n      handlerDropdown();\n    } else if (target.closest('.dropdown-header') && dropdownElement.classList.contains('club-list-active')) {\n      dropdownElement.style.display = 'block';\n    } else if (!target.closest('.club-list-active') && dropdownElement.classList.contains('club-list-active')) {\n      handlerDropdown();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (clubsSelect);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/clubsSelect.js?");
+
+/***/ }),
+
+/***/ "./src/modules/present.js":
+/*!********************************!*\
+  !*** ./src/modules/present.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar present = function present() {\n  var presentGift = document.querySelector('.fixed-gift');\n  var popupGift = document.getElementById('gift');\n\n  var handlerGiftPopup = function handlerGiftPopup() {\n    popupGift.classList.toggle('active');\n  };\n\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.fixed-gift')) {\n      target.style.display = 'none';\n      handlerGiftPopup();\n    } else if (target.closest('.close_icon') || target.closest('.close-btn') || !target.closest('.form-content')) {\n      handlerGiftPopup();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (present);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/present.js?");
 
 /***/ }),
 
@@ -462,7 +473,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("30caa4c852c6321202ad")
+/******/ 		__webpack_require__.h = () => ("8f24e433cb2d963224f0")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
