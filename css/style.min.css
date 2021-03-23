@@ -2068,6 +2068,17 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   justify-content: space-between
 }
 
+@keyframes toTopButtonAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 #totop {
   display: none;
   position: fixed;
@@ -2076,12 +2087,15 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   z-index: 200;
   font-size: 28px;
   color: #1e1c34;
-  display: block;
   width: 35px;
   height: 35px;
   background-color: #ffd11a;
   text-align: center;
   border-radius: 50%
+}
+#totop.active {
+  display: block;
+  animation: toTopButtonAnimation 0.5s ease-in-out;
 }
 
 .popup {
