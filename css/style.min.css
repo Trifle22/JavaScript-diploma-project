@@ -299,6 +299,11 @@ html#schelkovo .head-slider .slider-image {
   right: 0
 }
 
+.dropdown-header>li>a {
+  min-width: 100%;
+  min-height: 100%;
+}
+
 html#mozaika .head-slider .slider-image img,
 html#schelkovo .head-slider .slider-image img {
   min-width: 474px
@@ -832,7 +837,7 @@ html#schelkovo .advantages .wrapper {
 
 .fixed-gift {
   position: fixed;
-  z-index: 5555;
+  z-index: 1000;
   display: inline;
   top: 15px;
   right: 20px;

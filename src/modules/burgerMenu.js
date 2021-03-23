@@ -14,11 +14,12 @@ const burgerMenu = function() {
       }
     })
   });
-  window.addEventListener('scroll', event => {
-    if (pageYOffset >= 238) {
-      burgerMenuBtn.parentElement.parentElement.style.cssText = 'position: fixed; top: 0; left: 0; z-index: 999999;';
+  const scrollBurgerMenuValue = burgerMenuBtn.parentElement.parentElement.offsetTop;
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset >= scrollBurgerMenuValue) {
+      burgerMenuBtn.parentElement.parentElement.style.cssText = 'position: fixed; top: 0; left: 0; z-index: 1009;';
     } else {
-      burgerMenuBtn.parentElement.parentElement.style.cssText = '';
+      burgerMenuBtn.parentElement.parentElement.style = '';
     }
   })
 }
