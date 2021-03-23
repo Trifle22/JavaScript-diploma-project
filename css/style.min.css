@@ -1658,6 +1658,9 @@ nav.popup-menu .close-menu-btn img {
   display: block;
   animation: nextSlideAnimation 0.5s ease-in-out;
 }
+.gallery-slider-dot {
+  cursor: pointer;
+}
 
 #gallery .gallery-slider .slider-arrow {
   position: absolute;
