@@ -38,7 +38,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burgerMenu.js */ \"./src/modules/burgerMenu.js\");\n/* harmony import */ var _modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/clubsSelect.js */ \"./src/modules/clubsSelect.js\");\n/* harmony import */ var _modules_present_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/present.js */ \"./src/modules/present.js\");\n/* harmony import */ var _modules_calculator_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/calculator.js */ \"./src/modules/calculator.js\");\n\n\n\n\n\n\n(0,_modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_present_js__WEBPACK_IMPORTED_MODULE_2__.default)();\n(0,_modules_calculator_js__WEBPACK_IMPORTED_MODULE_3__.default)();\n\n//# sourceURL=webpack://diplomaproject/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burgerMenu.js */ \"./src/modules/burgerMenu.js\");\n/* harmony import */ var _modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/clubsSelect.js */ \"./src/modules/clubsSelect.js\");\n/* harmony import */ var _modules_present_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/present.js */ \"./src/modules/present.js\");\n/* harmony import */ var _modules_calculator_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/calculator.js */ \"./src/modules/calculator.js\");\n/* harmony import */ var _modules_mainSlider_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/mainSlider.js */ \"./src/modules/mainSlider.js\");\n\n\n\n\n\n\n\n(0,_modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_present_js__WEBPACK_IMPORTED_MODULE_2__.default)();\n(0,_modules_calculator_js__WEBPACK_IMPORTED_MODULE_3__.default)();\n(0,_modules_mainSlider_js__WEBPACK_IMPORTED_MODULE_4__.default)();\n\n//# sourceURL=webpack://diplomaproject/./src/index.js?");
 
 /***/ }),
 
@@ -72,6 +72,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar clubsSelect = function clubsSelect() {\n  var clubsSelectElement = document.querySelector('.clubs-list');\n  var dropdownElement = document.querySelector('.dropdown-header');\n\n  var handlerDropdown = function handlerDropdown() {\n    dropdownElement.classList.toggle('club-list-active');\n  };\n\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.clubs-list')) {\n      handlerDropdown();\n    } else if (target.closest('.dropdown-header') && dropdownElement.classList.contains('club-list-active')) {\n      dropdownElement.style.display = 'block';\n    } else if (!target.closest('.club-list-active') && dropdownElement.classList.contains('club-list-active')) {\n      handlerDropdown();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (clubsSelect);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/clubsSelect.js?");
+
+/***/ }),
+
+/***/ "./src/modules/mainSlider.js":
+/*!***********************************!*\
+  !*** ./src/modules/mainSlider.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar mainSlider = function mainSlider() {\n  var slider = document.querySelector('.main-slider');\n  var slides = slider.querySelectorAll('.slide');\n  var interval;\n  var currentSlide = 0;\n\n  var prevSlide = function prevSlide(elem, index, strClass) {\n    elem[index].classList.remove(strClass);\n  };\n\n  var nextSlide = function nextSlide(elem, index, strClass) {\n    elem[index].classList.add(strClass);\n  };\n\n  var autoPlaySlider = function autoPlaySlider() {\n    prevSlide(slides, currentSlide, 'main-slider-slide-active');\n    currentSlide++;\n\n    if (currentSlide >= slides.length) {\n      currentSlide = 0;\n    }\n\n    nextSlide(slides, currentSlide, 'main-slider-slide-active');\n  };\n\n  var startSlider = function startSlider() {\n    var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1500;\n    interval = setInterval(autoPlaySlider, time);\n  };\n\n  startSlider(1500);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mainSlider);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/mainSlider.js?");
 
 /***/ }),
 
@@ -484,7 +495,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("495d3325770ed23931df")
+/******/ 		__webpack_require__.h = () => ("7ac9ba41e3b5d029c0f4")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
