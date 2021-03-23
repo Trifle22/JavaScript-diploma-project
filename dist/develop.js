@@ -38,7 +38,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burgerMenu.js */ \"./src/modules/burgerMenu.js\");\n/* harmony import */ var _modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/clubsSelect.js */ \"./src/modules/clubsSelect.js\");\n/* harmony import */ var _modules_present_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/present.js */ \"./src/modules/present.js\");\n\n\n\n\n\n(0,_modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_present_js__WEBPACK_IMPORTED_MODULE_2__.default)();\n\n//# sourceURL=webpack://diplomaproject/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burgerMenu.js */ \"./src/modules/burgerMenu.js\");\n/* harmony import */ var _modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/clubsSelect.js */ \"./src/modules/clubsSelect.js\");\n/* harmony import */ var _modules_present_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/present.js */ \"./src/modules/present.js\");\n/* harmony import */ var _modules_calculator_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/calculator.js */ \"./src/modules/calculator.js\");\n\n\n\n\n\n\n(0,_modules_burgerMenu_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_clubsSelect_js__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_present_js__WEBPACK_IMPORTED_MODULE_2__.default)();\n(0,_modules_calculator_js__WEBPACK_IMPORTED_MODULE_3__.default)();\n\n//# sourceURL=webpack://diplomaproject/./src/index.js?");
 
 /***/ }),
 
@@ -50,6 +50,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar burgerMenu = function burgerMenu() {\n  var burgerMenuBtn = document.querySelector('.menu-button');\n  var menu = document.querySelector('.popup-menu');\n  var firstSectionElement = document.querySelector('.header-main');\n  var toTopButton = document.getElementById('totop');\n  burgerMenuBtn.addEventListener('click', function (event) {\n    var target = event.target;\n    menu.style.cssText = \"display: flex; animation: fade 0.4s ease-in-out;\";\n    menu.addEventListener('click', function (event) {\n      var target = event.target;\n\n      if (target.closest('.close-menu-btn')) {\n        this.style.display = 'none';\n      } else if (target.matches('a')) {\n        this.style.display = 'none';\n      }\n    });\n  });\n  var scrollBurgerMenuValue = burgerMenuBtn.parentElement.parentElement.offsetTop;\n  window.addEventListener('scroll', function () {\n    if (window.pageYOffset > firstSectionElement.clientHeight) {\n      toTopButton.classList.add('active');\n    } else {\n      toTopButton.classList.remove('active');\n    }\n\n    if (document.documentElement.clientWidth < 768) {\n      if (window.pageYOffset >= scrollBurgerMenuValue) {\n        burgerMenuBtn.parentElement.parentElement.style.cssText = 'position: fixed; top: 0; left: 0; z-index: 1009;';\n      } else {\n        burgerMenuBtn.parentElement.parentElement.style = '';\n      }\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (burgerMenu);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/burgerMenu.js?");
+
+/***/ }),
+
+/***/ "./src/modules/calculator.js":
+/*!***********************************!*\
+  !*** ./src/modules/calculator.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar calculator = function calculator() {\n  var priceTotal = document.getElementById('price-total');\n  var calculatorForm = document.getElementById('card_order');\n  var checkboxMozaika = document.getElementById('card_leto_mozaika');\n  var checkboxShelkovo = document.getElementById('card_leto_schelkovo');\n  var timeChangeBlocks = document.querySelectorAll('.time>input');\n  var mozaikaPrices = {\n    '1': 1999,\n    \"6\": 9900,\n    \"9\": 13900,\n    \"12\": 19900\n  };\n  var shelkovoPrices = {\n    \"1\": 2999,\n    \"6\": 14990,\n    \"9\": 21990,\n    \"12\": 24990\n  };\n  calculatorForm.addEventListener('change', function (event) {\n    var target = event.target;\n    console.log(target.value);\n\n    if (target.closest('.time') && checkboxMozaika.checked) {\n      priceTotal.textContent = mozaikaPrices[target.value];\n    } else if (target.closest('.time') && checkboxShelkovo.checked) {\n      priceTotal.textContent = shelkovoPrices[target.value];\n    } else if (target.closest('.club') && target.value === 'schelkovo') {\n      timeChangeBlocks.forEach(function (item) {\n        if (item.checked) {\n          console.log(shelkovoPrices[item.value]);\n          priceTotal.textContent = shelkovoPrices[item.value];\n        }\n      });\n    } else if (target.closest('.club') && target.value === 'mozaika') {\n      timeChangeBlocks.forEach(function (item) {\n        if (item.checked) {\n          console.log(mozaikaPrices[item.value]);\n          priceTotal.textContent = mozaikaPrices[item.value];\n        }\n      });\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (calculator);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/calculator.js?");
 
 /***/ }),
 
@@ -71,7 +82,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar present = function present() {\n  var presentGift = document.querySelector('.fixed-gift');\n  var popupGift = document.getElementById('gift');\n\n  var handlerGiftPopup = function handlerGiftPopup() {\n    popupGift.classList.toggle('active');\n  };\n\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n    console.log(target);\n\n    if (target.closest('.fixed-gift')) {\n      target.style.display = 'none';\n      handlerGiftPopup(); // \n    } else if ((target.classList.contains('close_icon') || target.closest('.close-btn') || !target.closest('.form-content')) && popupGift.classList.contains('active')) {\n      handlerGiftPopup();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (present);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/present.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar present = function present() {\n  var presentGift = document.querySelector('.fixed-gift');\n  var popupGift = document.getElementById('gift');\n\n  var handlerGiftPopup = function handlerGiftPopup() {\n    popupGift.classList.toggle('active');\n  };\n\n  if (presentGift) {\n    document.addEventListener('click', function (event) {\n      var target = event.target;\n\n      if (target.closest('.fixed-gift')) {\n        target.style.display = 'none';\n        handlerGiftPopup(); // \n      } else if ((target.classList.contains('close_icon') || target.closest('.close-btn') || !target.closest('.form-content')) && popupGift.classList.contains('active')) {\n        handlerGiftPopup();\n      }\n    });\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (present);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/present.js?");
 
 /***/ }),
 
@@ -473,7 +484,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("0aa8b4e1fcc80609a694")
+/******/ 		__webpack_require__.h = () => ("40124345a6008737442e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
