@@ -71,7 +71,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar present = function present() {\n  var presentGift = document.querySelector('.fixed-gift');\n  var popupGift = document.getElementById('gift');\n\n  var handlerGiftPopup = function handlerGiftPopup() {\n    popupGift.classList.toggle('active');\n  };\n\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.fixed-gift')) {\n      target.style.display = 'none';\n      handlerGiftPopup();\n    } else if (target.closest('.close_icon') || target.closest('.close-btn') || !target.closest('.form-content')) {\n      handlerGiftPopup();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (present);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/present.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar present = function present() {\n  var presentGift = document.querySelector('.fixed-gift');\n  var popupGift = document.getElementById('gift');\n\n  var handlerGiftPopup = function handlerGiftPopup() {\n    popupGift.classList.toggle('active');\n  };\n\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n    console.log(target);\n\n    if (target.closest('.fixed-gift')) {\n      target.style.display = 'none';\n      handlerGiftPopup(); // \n    } else if ((target.classList.contains('close_icon') || target.closest('.close-btn') || !target.closest('.form-content')) && popupGift.classList.contains('active')) {\n      handlerGiftPopup();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (present);\n\n//# sourceURL=webpack://diplomaproject/./src/modules/present.js?");
 
 /***/ }),
 
@@ -473,7 +473,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("8f24e433cb2d963224f0")
+/******/ 		__webpack_require__.h = () => ("0aa8b4e1fcc80609a694")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
