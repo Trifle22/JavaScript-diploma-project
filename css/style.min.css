@@ -1645,8 +1645,18 @@ nav.popup-menu .close-menu-btn img {
   display: none;
 }
 
+@keyframes nextSlideAnimation {
+  0% { 
+    opacity: 0;
+  }
+  100% { 
+    opacity: 1;
+  }
+}
+
 #gallery .gallery-slider .slide.active {
   display: block;
+  animation: nextSlideAnimation 0.5s ease-in-out;
 }
 
 #gallery .gallery-slider .slider-arrow {
