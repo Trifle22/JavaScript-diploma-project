@@ -1,5 +1,4 @@
 const clubsSelect = function() {
-  const clubsSelectElement = document.querySelector('.clubs-list');
   const dropdownElement = document.querySelector('.dropdown-header');
 
   const handlerDropdown = () => {
@@ -7,17 +6,18 @@ const clubsSelect = function() {
   };
 
   document.addEventListener('click', event => {
-    const target = event.target;
-    if (target.closest('.clubs-list')) {
+    let target = event.target;
+    if (target.matches('.club-select p')) {
       handlerDropdown();
-    } else if (target.closest('.dropdown-header') && 
+    } else if (!target.closest('.club-select') && 
+    dropdownElement.classList.contains("clubs-list-active")) {
+      handlerDropdown();
+    } else if (!target.closest('.dropdown-header') && 
     dropdownElement.classList.contains('club-list-active')) {
-      dropdownElement.style.display = 'block';
-    } else if (!target.closest('.club-list-active') && 
-                dropdownElement.classList.contains('club-list-active')) {
       handlerDropdown();
-    } 
+    }
   })
 }
 
 export default clubsSelect;
+
