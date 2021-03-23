@@ -1,6 +1,9 @@
 const mainSlider = () => {
-  const slider = document.querySelector('.main-slider');
-  const slides = slider.querySelectorAll('.slide')
+
+  if (document.querySelector('.main-slider') && document.querySelectorAll('.slide')) {
+    const slider = document.querySelector('.main-slider');
+  const slides = slider.querySelectorAll('.slide');
+
   let interval;
   let currentSlide = 0;
 
@@ -25,6 +28,8 @@ const mainSlider = () => {
   }
 
   startSlider(1500);
+  }
+  
 }
 
 export default mainSlider;
