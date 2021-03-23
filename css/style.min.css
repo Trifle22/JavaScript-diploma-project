@@ -1424,10 +1424,10 @@ nav.popup-menu .close-menu-btn img {
   border: none;
   border-radius: 2px;
   color: transparent;
-  margin-right: 5px
+  margin-right: 5px;
 }
 
-.slider-dots li.slick-active button {
+.slider-dots li button.slick-active {
   background-color: #ffd11a
 }
 
@@ -1635,20 +1635,26 @@ nav.popup-menu .close-menu-btn img {
   padding-right: 75px;
   max-width: 900px;
   margin: 0 auto;
-  text-align: center
+  text-align: center;
+  position: relative;
 }
 
 #gallery .gallery-slider .slide {
   margin: 0 auto !important;
-  width: 100%
+  width: 100%;
+  display: none;
+}
+
+#gallery .gallery-slider .slide.active {
+  display: block;
 }
 
 #gallery .gallery-slider .slider-arrow {
   position: absolute;
   top: 50%;
   margin-top: -18px;
-  z-index: 100;
-  cursor: pointer
+  z-index: 1000;
+  cursor: pointer;
 }
 
 #gallery .gallery-slider .slider-arrow span {
