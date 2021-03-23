@@ -1561,6 +1561,7 @@ nav.popup-menu .close-menu-btn img {
 }
 
 .services-slider {
+  width: 100%;
   display: flex;
   margin: 0 auto;
   padding-left: 15px;
@@ -1596,15 +1597,22 @@ nav.popup-menu .close-menu-btn img {
   margin: 0 auto
 }
 
-.services-slider .slider-arrow {
+.support-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.support-block .slider-arrow {
   position: absolute;
   top: 75px;
   margin-top: -18px;
   z-index: 100;
-  cursor: pointer
+  cursor: pointer;
 }
 
-.services-slider .slider-arrow span {
+
+.support-block .slider-arrow span {
   display: block;
   width: 36px;
   height: 37px;
@@ -1614,13 +1622,14 @@ nav.popup-menu .close-menu-btn img {
   padding-top: 11px
 }
 
-.services-slider .slider-arrow.prev {
-  left: 2px
+.support-block .slider-arrow.prev {
+  left: 2px;
 }
 
-.services-slider .slider-arrow.next {
-  right: 2px
+.support-block .slider-arrow.next {
+  right: 2px;
 }
+
 
 #gallery {
   background-color: #fff
