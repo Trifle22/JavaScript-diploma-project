@@ -23,22 +23,38 @@ const calculator = function () {
     const target = event.target;
     if (target.closest('.time') && checkboxMozaika.checked) {
       priceTotal.textContent = mozaikaPrices[target.value];
+      if (promoInput.value === 'ТЕЛО2019') {
+        priceTotal.textContent = Math.ceil(Number(Number(priceTotal.textContent) * 0.7))
+      }
     } else if (target.closest('.time') && checkboxShelkovo.checked) {
       priceTotal.textContent = shelkovoPrices[target.value];
+      if (promoInput.value === 'ТЕЛО2019') {
+        priceTotal.textContent = Math.ceil(Number(Number(priceTotal.textContent) * 0.7))
+      }
     } else if (target.closest('.club') && target.value === 'schelkovo') {
       timeChangeBlocks.forEach(item => {
         if (item.checked) {
           priceTotal.textContent = shelkovoPrices[item.value];
+          if (promoInput.value === 'ТЕЛО2019') {
+            priceTotal.textContent = Math.ceil(Number(Number(priceTotal.textContent) * 0.7))
+          }
         }
+
       })
     } else if (target.closest('.club') && target.value === 'mozaika') {
       timeChangeBlocks.forEach(item => {
         if (item.checked) {
           priceTotal.textContent = mozaikaPrices[item.value];
+          if (promoInput.value === 'ТЕЛО2019') {
+            priceTotal.textContent = Math.ceil(Number(Number(priceTotal.textContent) * 0.7))
+          }
         }
       })
     } else if (target.closest('.promo-input') && target.value === 'ТЕЛО2019') {
+      target.style.border = '1px solid green'
       priceTotal.textContent = Math.ceil(Number(Number(priceTotal.textContent) * 0.7))
+    } else if (target.closest('.promo-input')) {
+      target.style.border = '';
     }
   })
 }
