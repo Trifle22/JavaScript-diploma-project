@@ -8,6 +8,9 @@ import mainSlider from './modules/mainSlider.js';
 import gallerySlider from './modules/gallerySlider.js';
 import SliderCarousel from './modules/SliderCarousel.js';
 import headerModals from './modules/headerModals.js';
+import sendFooterForm from './modules/sendFooterForm.js';
+import validateInputs from './modules/validateInputs.js';
+
 
 burgerMenu();
 clubsSelect();
@@ -16,6 +19,9 @@ calculator();
 mainSlider();
 gallerySlider();
 headerModals();
+sendFooterForm();
+validateInputs();
+
 
 const carousel = new SliderCarousel({
   main: '.slider-carousel-wrapper',

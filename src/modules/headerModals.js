@@ -16,7 +16,7 @@ const headerModals = () => {
     freeVisitModal.classList.contains('active')) {
       handlerModals(freeVisitModal);
     }
-    if (target.matches('.callback-btn')) {
+    if (target.matches('.open-callback-popup')) {
       handlerModals(callBackModal);
     } else if ((target.matches('img.close_icon') || target.matches('.overlay')) && 
     callBackModal.classList.contains('active')) {
