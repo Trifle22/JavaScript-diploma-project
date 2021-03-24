@@ -2314,6 +2314,11 @@ p.personal-data input[type=checkbox]:checked+label:before {
   font-size: 20px
 }
 
+#thanks.active {
+  display: block;
+  animation: fadePopup 0.2s ease-in-out;
+}
+
 #gift .form-content p {
   font-size: 20px;
   width: 90%;
