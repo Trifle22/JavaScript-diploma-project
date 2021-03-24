@@ -30,7 +30,8 @@ const burgerMenu = function() {
       } else {
         burgerMenuBtn.parentElement.parentElement.style = '';
       }
-
+    } else {
+      burgerMenuBtn.parentElement.parentElement.style = '';
     }
   });
 }
