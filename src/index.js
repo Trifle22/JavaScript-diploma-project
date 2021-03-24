@@ -7,6 +7,7 @@ import calculator from './modules/calculator.js';
 import mainSlider from './modules/mainSlider.js';
 import gallerySlider from './modules/gallerySlider.js';
 import SliderCarousel from './modules/SliderCarousel.js';
+import headerModals from './modules/headerModals.js';
 
 burgerMenu();
 clubsSelect();
@@ -14,6 +15,7 @@ present();
 calculator();
 mainSlider();
 gallerySlider();
+headerModals();
 
 const carousel = new SliderCarousel({
   main: '.slider-carousel-wrapper',

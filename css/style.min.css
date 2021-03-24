@@ -2321,9 +2321,31 @@ p.personal-data input[type=checkbox]:checked+label:before {
   font-weight: 500;
   margin-top: 30px
 }
+
 #gift.active {
   display: block;
+  animation: fadePopup 0.5s ease-in-out
 }
+
+@keyframes fadePopup{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#free_visit_form.active {
+  display: block !important;
+  animation: fadePopup 0.5s ease-in-out !important;
+}
+
+#callback_form.active {
+  display: block !important;
+  animation: fadePopup 0.5s ease-in-out !important;
+}
+
 
 @media only screen and (max-width:1199px) {
   .services-slider .slider-arrow.prev {

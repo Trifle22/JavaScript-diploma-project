@@ -29,7 +29,6 @@ export default class SliderCarousel {
     this.addStyle();
 
     if (this.prev && this.next) {
-      console.log(this.slides);
       this.controlSlider();
     } else {
       this.addArrow();
