@@ -2324,7 +2324,7 @@ p.personal-data input[type=checkbox]:checked+label:before {
 
 #gift.active {
   display: block;
-  animation: fadePopup 0.5s ease-in-out
+  animation: fadePopup 0.2s ease-in-out
 }
 
 @keyframes fadePopup{
@@ -2338,12 +2338,12 @@ p.personal-data input[type=checkbox]:checked+label:before {
 
 #free_visit_form.active {
   display: block !important;
-  animation: fadePopup 0.5s ease-in-out !important;
+  animation: fadePopup 0.2s ease-in-out !important;
 }
 
 #callback_form.active {
   display: block !important;
-  animation: fadePopup 0.5s ease-in-out !important;
+  animation: fadePopup 0.2s ease-in-out !important;
 }
 
 
