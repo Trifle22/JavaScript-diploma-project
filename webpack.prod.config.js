@@ -4,7 +4,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'production.js',
-    path: path.resolve(__dirname, './dist')
+    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(process.cwd(), 'dist'),
   },
   mode : 'production',
   module: {
@@ -20,5 +21,5 @@ module.exports = {
         exclude: /node_modules/,
       }
     ]
-  }
+  },
 };
