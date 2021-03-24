@@ -1564,8 +1564,8 @@ nav.popup-menu .close-menu-btn img {
   width: 100%;
   display: flex;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px
+  /* padding-left: 15px;
+  padding-right: 15px; */
 }
 
 .services-slider .slide {
@@ -1623,11 +1623,11 @@ nav.popup-menu .close-menu-btn img {
 }
 
 .support-block .slider-arrow.prev {
-  left: 2px;
+  left: -2px;
 }
 
 .support-block .slider-arrow.next {
-  right: 2px;
+  right: -2px;
 }
 
 

@@ -21,6 +21,7 @@ const carousel = new SliderCarousel({
   prev: '.carousel-arrow-prev',
   next: '.carousel-arrow-next',
   slidesToShow: 4,
+  infinity: true,
 });
 
 carousel.init();

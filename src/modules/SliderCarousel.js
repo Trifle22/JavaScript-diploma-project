@@ -7,6 +7,7 @@ export default class SliderCarousel {
     position = 0,
     next,
     prev,
+    infinity = false,
     slidesToShow = 4,
   }) {
     this.main = document.querySelector(main);
@@ -17,7 +18,9 @@ export default class SliderCarousel {
     this.slidesToShow = slidesToShow;
     this.options = {
       position,
+      infinity,
       widthSlide: Math.floor(100 / this.slidesToShow),
+      maxPosition: this.slides.length - this.slidesToShow
     };
   }
 
@@ -71,18 +74,23 @@ export default class SliderCarousel {
   }
 
   prevSlider() {
-    if (this.options.position > 0) {
+    if (this.options.infinity || this.options.position > 0) {
       --this.options.position;
-      console.log(this.options.position);
+      if (this.options.position < 0) {
+        this.options.position = this.options.maxPosition;
+      }
       this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`;
     }
   }
 
   nextSlider() {
-
-    ++this.options.position;
-    console.log(this.options.position);
-    this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`;
+    if (this.options.infinity || this.options.position < this.options.maxPosition) {
+      ++this.options.position;
+      if (this.options.position > this.options.maxPosition) {
+        this.options.position = 0;
+      }
+      this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`;
+    }
   }
 
   addArrow() {
