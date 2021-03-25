@@ -10,7 +10,7 @@ import SliderCarousel from './modules/SliderCarousel.js';
 import headerModals from './modules/headerModals.js';
 import validateInputs from './modules/validateInputs.js';
 import sendFooterForm from './modules/sendFooterForm.js';
-
+import sendBodyForms from './modules/sendBodyForms.js';
 
 burgerMenu();
 clubsSelect();
@@ -21,6 +21,8 @@ gallerySlider();
 headerModals();
 validateInputs();
 sendFooterForm();
+sendBodyForms();
+
 
 
 const carousel = new SliderCarousel({

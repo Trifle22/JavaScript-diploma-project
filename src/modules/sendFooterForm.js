@@ -33,7 +33,7 @@ const sendFooterForm = () => {
     });
 
 
-    if ((formElements[0].checked || formElements[1].checked) && formElements[2].value !== '') {
+    if ((formElements[0].checked || formElements[1].checked) && formElements[2].value.trim() !== '') {
       postData(body)
       .then((response) => {
         if (response.status !== 200) {
@@ -49,15 +49,9 @@ const sendFooterForm = () => {
       event.preventDefault();
       alert('Выберите один из клубов и введите корректный номер телефона');
     }
-
-
   })
 
-
-
-
   const postData = (body) => {
-    console.log('отправка формы...');
     return fetch('./server.php', {
       method: 'POST',
       headers: {
