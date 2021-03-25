@@ -2775,3 +2775,100 @@ p.personal-data input[type=checkbox]:checked+label:before {
     bottom: 30px
   }
 }
+
+.loader-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  transform: translateX(-200px) translateY(-200px);
+  display: none;
+  overflow: hidden;
+}
+.wave .loader {
+  width: 500px;
+  height: 500px; 
+}
+  .wave .loader > div {
+    float: left;
+    margin: 40% 2% 0 0;
+    width: 4%;
+    height: 16%;
+    background-color: rgba(79, 25, 52, .5);
+    animation: wave 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) infinite; 
+  }
+  .wave .loader .line-1 {
+    margin-left: 30%; 
+    background-color: #ffd11a;
+  }
+  .wave .loader .line-1 {
+    animation-delay: 0.1s; 
+  }
+  .wave .loader .line-2 {
+    animation-delay: 0.2s; 
+  }
+  .wave .loader .line-3 {
+    animation-delay: 0.3s; 
+    background-color: #ffd11a;
+
+  }
+  .wave .loader .line-4 {
+    animation-delay: 0.4s; 
+  }
+  .wave .loader .line-5 {
+    animation-delay: 0.5s;
+    background-color: #ffd11a; 
+  }
+
+@keyframes wave {
+  0%,100% {
+    transform: scaleY(1); 
+  }
+  50% {
+    transform: scaleY(2); 
+  } 
+}
+
+@keyframes errorAlertActive {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.error-alert {
+  padding: 20px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  display: none;
+  justify-content: space-between;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  align-items: center;
+  z-index: 9999;
+}
+.error-alert.error-alert-active {
+  display: flex !important;
+  animation: errorAlertActive 0.5s ease-in-out;
+}
+
+.error-alert-close {
+  color: white;
+  background-color:  transparent;
+  border: none;
+  outline: none;
+  transition:  all 0.5s ease-in-out;
+  font-size: 16px;
+}
+
+.error-alert-close:hover {
+  transform: rotate(360deg);
+  background-color: transparent;
+}

@@ -1,11 +1,11 @@
 const sendBodyForms = () => {
   const modalThanks = document.querySelector('#thanks');
-  const errorMesssage = document.createElement('p');
-  errorMesssage.textContent = 'Что-то пошло не так...';
-  errorMesssage.style.cssText = 'display: flex; color: red; position: absolute; bottom: 10px; left: 0;';
-
+  const preLoader = document.querySelector('.loader-container');
+  const errorAlert = document.querySelector('.error-alert');
+  const errorAlertClose = document.querySelector('.error-alert-close');
 
   const successfulExecution = (target) => {
+    preLoader.style.display = 'none';
     target.reset();
     modalThanks.classList.add('active');
     modalThanks.addEventListener('click', event => {
@@ -16,6 +16,16 @@ const sendBodyForms = () => {
       modalThanks.classList.contains('active')) {
       modalThanks.classList.remove('active');
     }})
+  }
+
+  const badExecution = (error, target) => {
+    console.error(error);
+    target.reset();
+    preLoader.style.display = 'none';
+    errorAlert.classList.add('error-alert-active');
+    errorAlertClose.addEventListener('click', () => {
+      errorAlert.classList.remove('error-alert-active');
+    })
   }
 
 
@@ -44,15 +54,13 @@ const sendBodyForms = () => {
         ) {
           postData(body)
             .then(response => {
-              if (response.status !== 200) {
+              if (response.status !== 201) {
                 throw new Error('status network not 200')
               }
               successfulExecution(target);
             })
             .catch(error => {
-              console.error(error);
-              console.log(target);
-              target.appendChild(errorMesssage);
+              badExecution(error, target);
             })
         } else {
           event.preventDefault();
@@ -71,15 +79,13 @@ const sendBodyForms = () => {
       formElements[3].checked) {
         postData(body)
         .then(response => {
-          if (response.status !== 200) {
+          if (response.status !== 201) {
             throw new Error('status network not 200')
           }
           successfulExecution(target);
         })
         .catch(error => {
-          console.error(error);
-          console.log(target);
-          target.appendChild(errorMesssage);
+          badExecution(error, target);
         })
       } else {
         event.preventDefault();
@@ -105,15 +111,13 @@ const sendBodyForms = () => {
         ) {
           postData(body)
             .then(response => {
-              if (response.status !== 200) {
+              if (response.status !== 201) {
                 throw new Error('status network not 200')
               }
               successfulExecution(target);
             })
             .catch(error => {
-              console.error(error);
-              console.log(target);
-              target.appendChild(errorMesssage);
+              badExecution(error, target);
             })
     }
 
@@ -121,6 +125,7 @@ const sendBodyForms = () => {
 
 
   const postData = (body) => {
+    preLoader.style.display = 'block';
     return fetch('./server.php', {
       method: 'POST',
       headers: {
