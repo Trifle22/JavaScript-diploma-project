@@ -48,7 +48,7 @@ const sendFooterForm = () => {
     if ((formElements[0].checked || formElements[1].checked) && formElements[2].value.trim() !== '') {
       postData(body)
       .then((response) => {
-        if (response.status !== 201) {
+        if (response.status !== 200) {
           throw new Error('status network not 200')
         }
         successfulExecution();

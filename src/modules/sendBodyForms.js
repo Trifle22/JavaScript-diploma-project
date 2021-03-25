@@ -54,7 +54,7 @@ const sendBodyForms = () => {
         ) {
           postData(body)
             .then(response => {
-              if (response.status !== 201) {
+              if (response.status !== 200) {
                 throw new Error('status network not 200')
               }
               successfulExecution(target);
@@ -79,7 +79,7 @@ const sendBodyForms = () => {
       formElements[3].checked) {
         postData(body)
         .then(response => {
-          if (response.status !== 201) {
+          if (response.status !== 200) {
             throw new Error('status network not 200')
           }
           successfulExecution(target);
@@ -111,7 +111,7 @@ const sendBodyForms = () => {
         ) {
           postData(body)
             .then(response => {
-              if (response.status !== 201) {
+              if (response.status !== 200) {
                 throw new Error('status network not 200')
               }
               successfulExecution(target);
