@@ -100,6 +100,7 @@ const sendBodyForms = () => {
       formData.forEach((value, key) => {
         body[key] = value;
       });
+      
 
       if ((formElements[0].checked || 
         formElements[1].checked || 
@@ -119,8 +120,10 @@ const sendBodyForms = () => {
             .catch(error => {
               badExecution(error, target);
             })
+    } else {
+      event.preventDefault();
+      alert('Введите корректные данные во все поля формы и согласитесь на обработку персональных данных');
     }
-
   }})
 
 
