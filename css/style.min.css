@@ -2780,7 +2780,7 @@ p.personal-data input[type=checkbox]:checked+label:before {
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 999;
+  z-index: 9999;
   transform: translateX(-200px) translateY(-200px);
   display: none;
   overflow: hidden;
